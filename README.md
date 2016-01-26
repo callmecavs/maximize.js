@@ -2,7 +2,7 @@
 
 [![Maximize.js on NPM](https://img.shields.io/npm/v/maximize.js.svg)](https://www.npmjs.com/package/maximize.js)
 
-A tiny wrapper for cross-browser requestFullscreen.
+A tiny wrapper for cross-browser requestFullscreen (not the entire [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API)).
 
 ## Usage
 
@@ -32,10 +32,11 @@ Simply import Maximize, then call it.
 // import Maximize
 import maximize from 'maximize.js'
 
-// clicking '.button' will fullscreen the browser
+// clicking .button will fullscreen the browser
+// event.preventDefault will be called if .button is an <a> tag
 maximize(document.querySelector('.button'))
 
-// clicking '.toggle' will fullscreen '.video'
+// clicking .toggle will fullscreen .video
 maximize(document.querySelector('.toggle'), document.querySelector('.video'))
 ```
 
