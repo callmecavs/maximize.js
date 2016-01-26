@@ -11,6 +11,14 @@ function getName() {
   return names.reduce((prev, curr) => document.documentElement[curr] ? curr : prev, undefined)
 }
 
-export default () => {
+export default (button, element = document.documentElement) => {
   const method = getName()
+
+  button.addEventListener('click', event => {
+    // prevent default if button is a link
+    button.tagName.toLowerCase() === 'a' && event.preventDefault()
+
+    // enter fullscreen
+    element[method]()
+  })
 }
