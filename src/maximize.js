@@ -1,5 +1,3 @@
-// determine method name, using the documentElement
-
 function getName() {
   const names = [
     'requestFullscreen',
@@ -8,17 +6,18 @@ function getName() {
     'webkitRequestFullscreen'
   ]
 
+  // determine method name, using the documentElement
   return names.reduce((prev, curr) => document.documentElement[curr] ? curr : prev, undefined)
 }
 
-export default (button, element = document.documentElement) => {
+export default (toggle, target = document.documentElement) => {
   const method = getName()
 
-  button.addEventListener('click', event => {
-    // prevent default if button is a link
-    button.tagName.toLowerCase() === 'a' && event.preventDefault()
+  toggle.addEventListener('click', event => {
+    // prevent default if toggle is a link
+    toggle.tagName.toLowerCase() === 'a' && event.preventDefault()
 
     // enter fullscreen
-    element[method]()
+    target[method]()
   })
 }
