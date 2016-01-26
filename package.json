@@ -1,23 +1,23 @@
 {
   "name":        "maximize.js",
-  "version":     "0.0.1",
-  "description": "",
-  "homepage":    "",
-  "main":        "",
+  "version":     "1.0.0",
+  "description": "A tiny wrapper for cross-browser requestFullscreen.",
+  "homepage":    "https://github.com/callmecavs/maximize.js",
+  "main":        "dist/maximize.min.js",
 
-  "author":  "",
-  "license": "",
+  "author":  "Michael Cavalea",
+  "license": "MIT",
 
   "repository": {
     "type": "git",
-    "url":  ""
+    "url":  "https://github.com/callmecavs/maximize.js.git"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/callmecavs/maximize.js/issues"
   },
 
   "keywords": [
-
+    "fullscreen"
   ],
 
   "devDependencies": {
