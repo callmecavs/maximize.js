@@ -25,8 +25,8 @@ $ npm install maximize.js --save
 
 Simply import Maximize, then call it.
 
-* Passed _one_ element: clicking the element will fullscreen the browser
-* Passed _two_ elements: clicking the first element will fullscreen the second element
+* **Passed one element:** clicking the element will _fullscreen the browser_
+* **Passed two elements:** clicking the first element will _fullscreen the second element_
 
 ```es6
 // import Maximize
