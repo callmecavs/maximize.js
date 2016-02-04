@@ -9,7 +9,7 @@ function getName() {
   return names.reduce((prev, curr) => document.documentElement[curr] ? curr : prev, undefined)
 }
 
-export default (toggle, target = document.documentElement) => {
+export default (toggle, target = document.documentElement, callback) => {
   // determine fullscreen method
   const method = getName()
 
@@ -17,7 +17,11 @@ export default (toggle, target = document.documentElement) => {
     // prevent default if toggle is link
     toggle.tagName.toLowerCase() === 'a' && event.preventDefault()
 
-    // enter fullscreen, or fail silently
-    target[method] && target[method]()
+    // silently fail
+    if(target[method]) {
+      // enter fullscreen and fire callback
+      target[method]()
+      callback()
+    }
   })
 }

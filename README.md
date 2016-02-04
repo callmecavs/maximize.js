@@ -27,6 +27,7 @@ Simply import Maximize, then call it.
 
 * **Passed one element:** clicking the element will _fullscreen the browser_
 * **Passed two elements:** clicking the first element will _fullscreen the second element_
+* **Passed two elements, and a callback:**: clicking the first element will _fullscreen the second_, then the callback will be fired
 
 ```es6
 // import Maximize
@@ -38,6 +39,11 @@ maximize(document.querySelector('.button'))
 
 // clicking .toggle will fullscreen .video
 maximize(document.querySelector('.toggle'), document.querySelector('.video'))
+
+// clicking .toggle will fullscreen .video, then fire the callback
+maximize(document.querySelector('.toggle'), document.querySelector('.video'), () => {
+  // ...
+})
 ```
 
 ## License
