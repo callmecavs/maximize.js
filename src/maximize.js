@@ -21,7 +21,7 @@ export default (toggle, target = document.documentElement, callback) => {
     if(target[method]) {
       // enter fullscreen and fire callback
       target[method]()
-      callback()
+      callback && callback()
     }
   })
 }
